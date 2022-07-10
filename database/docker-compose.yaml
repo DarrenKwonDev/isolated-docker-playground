@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql
+    restart: always
+    command: --lower_case_table_names=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci # 대소문자 구분
+    container_name: mysql-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=my_db
+      - TZ=Asia/Seoul
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+  postgresql:
+    image: postgres:latest
+    restart: always
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+      PGDATA: /data/postgres
+    volumes:
+      - ./postgres/:/data/postgres
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
