@@ -6,3 +6,5 @@ airflow/.env
 database/mysql
 database/postgres
 database/docker-entrypoint-initdb.d
+
+mysql

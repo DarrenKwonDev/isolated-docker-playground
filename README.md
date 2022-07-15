@@ -22,9 +22,17 @@ you can run container partially using `docker compose up $name`
     ```
 
 - [ ] postgresql
+
   - https://hub.docker.com/_/postgres
   - ```
     psql -U $name
+    ```
+
+- [ ] nginx
+  - https://hub.docker.com/_/nginx
+  - official doc: http://nginx.org/en/docs/
+  - ```
+    docker build . -t darren:nginx && docker compose up
     ```
 
 ## materials
