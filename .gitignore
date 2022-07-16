@@ -8,3 +8,4 @@ database/postgres
 database/docker-entrypoint-initdb.d
 
 mysql
+maxmind_geoip
